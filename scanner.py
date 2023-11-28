@@ -52,7 +52,6 @@ class SSLChecker:
         async def parseResponse(url, port):
             try:
                 if self.semaphore.locked():
-                    # print("Concurrency limit reached, waiting ...")
                     await asyncio.sleep(1)
 
                 redirected_domain = ""
